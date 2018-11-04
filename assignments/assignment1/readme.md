@@ -39,6 +39,12 @@ Body: name=Diksha&image=imageurl&programCode=1
 
 GET: http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/{studentID}
 
+PUT :  http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/students
+
+Content-Type: application/x-www-form-urlencoded
+
+Body: name=Diksha&image=imageurl&programCode=1&studentID={studentID}
+
 
 ## Courses
 
@@ -56,12 +62,54 @@ Content-Type: application/x-www-form-urlencoded
 
 Body: studentID={studentID}&courseID={courseID}
 
-## // Assign Course to Professor
+##  Assign Course to Professor
 POST :http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/professor
 
 Content-Type: application/x-www-form-urlencoded
 
 Body: professorID={professorID}&courseID={courseID}
+
+## Assign TA to Course
+POST :http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/ta
+
+Content-Type: application/x-www-form-urlencoded
+
+Body: studentID={studentID}&courseID={courseID}
+
+
+## Add Notes to Lectures	
+
+POST: http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/lectures/notes
+
+Content-Type: application/x-www-form-urlencoded
+
+Body: courseID={courseID}&lectureID={lectureID}&notes=vhdsfhesgfj
+
+## Add Material to Lectures
+
+POST: http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/lectures/materials
+
+Content-Type: application/x-www-form-urlencoded
+
+Body: courseID={courseID}&lectureID={lectureID}&material=vhdsfhesgfj
+
+
+## Post Announcements to Board
+
+POST: http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/board
+
+Content-Type: application/x-www-form-urlencoded
+
+Body: courseID={courseID}&context=MidtermAnnouncement
+
+## Get Announcements from Board
+
+GET : http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/board/{courseID}
+
+
+
+
+
 
 
 
