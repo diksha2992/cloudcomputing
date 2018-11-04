@@ -76,6 +76,10 @@ Content-Type: application/x-www-form-urlencoded
 
 Body: studentID={studentID}&courseID={courseID}
 
+## Delete TA to Course
+
+DELETE: http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/{courseID}/ta/{studentID}
+
 
 ## Add Notes to Lectures	
 
@@ -105,6 +109,18 @@ Body: courseID={courseID}&context=MidtermAnnouncement
 ## Get Announcements from Board
 
 GET : http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/board/{courseID}
+
+## Delete Announcements on Board
+
+DELETE: http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/board/{courseID}/{announcementID}
+
+## Update Announcements on Board
+
+PUT: http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/board
+
+Content-Type: application/x-www-form-urlencoded
+
+Body: courseID={courseID}&context=MidtermAnnouncement&announcementID={announcementID}
 
 
 
