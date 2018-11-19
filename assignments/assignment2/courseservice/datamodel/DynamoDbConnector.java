@@ -11,9 +11,8 @@ public class DynamoDbConnector {
 
 	public static void init() {
 		if (dynamoDB == null) {
-			AWSCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
-			credentialsProvider.getCredentials();
-
+			AWSCredentialsProvider credentialsProvider = new AWSCredentialsProviderChain(
+					new InstanceProfileCredentialsProvider(false), new ProfileCredentialsProvider("default"));
 			dynamoDB = AmazonDynamoDBClientBuilder.standard().withCredentials(credentialsProvider)
 					.withRegion("us-east-1").build();
 		}
