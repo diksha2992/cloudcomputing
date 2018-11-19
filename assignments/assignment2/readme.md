@@ -1,5 +1,5 @@
 
-# Assignment 1 repository
+# Assignment 2 repository
 
 GitHub link: https://github.com/diksha2992/cloudcomputing/tree/master/assignments/assignment2
 
