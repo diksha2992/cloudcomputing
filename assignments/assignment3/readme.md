@@ -34,22 +34,21 @@ Ex:
 Body :
 {
 	"firstName":"Myfirstname",
-  "lastName":"Mylastname",
+  	"lastName":"Mylastname",
 	"department":"CSE",
-  "emailId":"youremailid@domain.com"
+  	"emailId":"youremailid@domain.com"
 }
 
 GET: http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/students/{studentId}
 
 ### Enroll Student into Course
 
-POST :http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/{courseId}/student/register
+POST :http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/student/{studentId}/register
 
 Ex:
 Body:
 {
-  "courseId":"CS101",
-  "studentId":"4123123"
+  "courseId":"CS105"
 }
 
 ## Post Announcements to Board
