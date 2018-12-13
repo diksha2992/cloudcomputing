@@ -1,0 +1,39 @@
+{
+  "Comment": "State machine to automate resource creation for new courses.",
+  "StartAt": "IsNewCourse?",
+  "States": {
+    "IsNewCourse?": {
+      "Type" : "Choice",
+      "Choices": [
+        {
+          "Variable": "$.isNewCourse",
+          "BooleanEquals": true,
+          "Next": "CreateRegistrar"
+        }
+      ],
+      "Default": "DoNothing"
+    },
+
+    "CreateRegistrar": {
+      "Type" : "Task",
+      "Resource": "arn:aws:lambda:us-east-1:784533316345:function:RegistrarCreationLambda",
+      "Next": "CreateBoard"
+    },
+
+    "CreateBoard": {
+      "Type" : "Task",
+      "Resource": "arn:aws:lambda:us-east-1:784533316345:function:BoardCreationLambda",
+      "Next": "CreateNotificationTopic"
+    },
+    
+    "CreateNotificationTopic": {
+      "Type" : "Task",
+      "Resource": "arn:aws:lambda:us-east-1:784533316345:function:NotificationTopicCreationLambda",
+      "End": true
+    },
+
+    "DoNothing": {
+      "Type": "Succeed"
+    }
+  }
+}
