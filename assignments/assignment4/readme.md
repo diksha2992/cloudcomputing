@@ -25,6 +25,8 @@ Body:
 - Board
 - NotificationTopic
 
+### Bonus: Creating Registrar by calling Rest API instead of directly calling DynamoDB, as asked in the question.
+
 ### Get Course
 GET: http://cloudcomputeservice-env.ew3bhn6twj.us-east-1.elasticbeanstalk.com/webapi/course/{courseId}
 
